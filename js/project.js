@@ -1,51 +1,37 @@
-// ==========================================================================
-// Project detail page — reads ?id=... from the URL and fills in content
-// from js/portfolio-data.js. Also wires up prev/next navigation across
-// the full flattened project list.
-// ==========================================================================
+/* Projectpagina: leest ?id= uit de URL en vult de inhoud uit portfolio-data.js. */
+(function () {
+  'use strict';
 
-// Flatten portfolioData into a single ordered list, keeping category info
-const flatProjects = portfolioData.flatMap(group =>
-  group.items.map(item => ({ ...item, category: group.category }))
-);
+  var all = window.allProjects;
+  var id = new URLSearchParams(window.location.search).get('id');
+  var i = all.findIndex(function (p) { return p.id === id; });
+  if (i < 0) i = 0;
+  var p = all[i];
+  var esc = window.gaUI.esc;
 
-const params = new URLSearchParams(window.location.search);
-const requestedId = params.get('id');
+  document.title = p.title + ' — Gazmend Aliaj';
+  document.getElementById('pEyebrow').textContent = p.category + ' · ' + p.year;
+  document.getElementById('pTitle').textContent = p.title;
+  document.getElementById('pDescription').textContent = p.description;
 
-const currentIndex = flatProjects.findIndex(p => p.id === requestedId);
-const project = currentIndex !== -1 ? flatProjects[currentIndex] : flatProjects[0];
-const safeIndex = currentIndex !== -1 ? currentIndex : 0;
+  var hero = document.getElementById('pHero');
+  if (p.image) hero.style.backgroundImage = 'url(' + p.image + ')';
+  hero.setAttribute('aria-label', p.title);
 
-if (!requestedId || currentIndex === -1) {
-  // Unknown or missing id — fall back to the first project rather than
-  // showing a broken page.
-  console.warn('Onbekend project-id, val terug op eerste project.');
-}
+  document.getElementById('pFacts').innerHTML =
+    [['Klant', p.client], ['Rol', p.role], ['Jaar', p.year]]
+      .map(function (f) { return '<div><dt>' + esc(f[0]) + '</dt><dd>' + esc(f[1]) + '</dd></div>'; })
+      .join('');
 
-document.title = `${project.title} — Gazmend Aliaj`;
+  var gallery = document.getElementById('pGallery');
+  if (p.gallery && p.gallery.length) {
+    gallery.innerHTML = p.gallery.map(function (src) {
+      return '<div class="block" style="background-image:url(' + esc(src) + ')"></div>';
+    }).join('');
+  }
 
-document.getElementById('projectCategory').textContent = project.category;
-document.getElementById('projectTitle').textContent = project.title;
-document.getElementById('projectDescription').textContent = project.description || project.blurb;
-document.getElementById('factClient').textContent = project.client || '—';
-document.getElementById('factRole').textContent = project.role || '—';
-document.getElementById('factYear').textContent = project.year || '—';
-
-const mainImage = document.getElementById('projectImageMain');
-mainImage.setAttribute('aria-label', `Hoofdbeeld — ${project.title}`);
-if (project.image) {
-  mainImage.style.backgroundImage = `url(${project.image})`;
-}
-
-// Prev / next across the full flattened list, wrapping around at the ends
-const prevProject = flatProjects[(safeIndex - 1 + flatProjects.length) % flatProjects.length];
-const nextProject = flatProjects[(safeIndex + 1) % flatProjects.length];
-
-const prevLink = document.getElementById('prevProject');
-const nextLink = document.getElementById('nextProject');
-
-prevLink.href = `project.html?id=${encodeURIComponent(prevProject.id)}`;
-prevLink.querySelector('span').textContent = prevProject.title;
-
-nextLink.href = `project.html?id=${encodeURIComponent(nextProject.id)}`;
-nextLink.querySelector('span').textContent = nextProject.title;
+  var prev = all[(i - 1 + all.length) % all.length];
+  var next = all[(i + 1) % all.length];
+  document.getElementById('pPrev').href = 'project.html?id=' + encodeURIComponent(prev.id);
+  document.getElementById('pNext').href = 'project.html?id=' + encodeURIComponent(next.id);
+})();
