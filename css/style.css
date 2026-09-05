@@ -23,7 +23,7 @@
   --header-scrim:rgba(248,248,248,.9);
   --shadow-nav-sheet:0 8px 16px rgba(0,0,0,.06);
 
-  --hero-size:min(33vw,170px);
+  --hero-size:min(25vw,170px);
   --brush-size:calc(var(--hero-size) * .95);
 }
 
@@ -122,7 +122,7 @@ h1,h2,h3,p{overflow-wrap:break-word;text-wrap:pretty}
 .hero__word{position:relative;width:fit-content}
 /* The graphic is rotated about its centre and pulled in by .141x its width — half of what a
    -20deg rotation adds to each side — so the ROTATED edge meets the gutter, not the layout box. */
-.hero__brush{position:absolute;right:calc(var(--brush-size) * .141);top:calc(var(--hero-size) * -.30);width:var(--brush-size);height:auto;transform:rotate(-20deg);z-index:0;pointer-events:none}
+.hero__brush {position: absolute;right: calc(var(--brush-size) * -0.8);top: calc(var(--hero-size) * -0.8);width: var(--brush-size);height: auto;transform: rotate(-20deg);z-index: 0;pointer-events: none;}
 .hero__title{position:relative;z-index:1;margin:0;font-family:var(--font-display);font-weight:300;font-size:var(--hero-size);line-height:.9;letter-spacing:-.01em;color:var(--text-heading);white-space:nowrap}
 .hero__sub{display:flex;align-items:center;gap:12px;margin:18px 0 0;font-family:var(--font-display);font-size:17px;line-height:1.35;color:var(--text-body)}
 .hero__sub .dash{width:32px;height:3px}
