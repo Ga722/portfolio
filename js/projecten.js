@@ -6,7 +6,9 @@
   var rows = document.getElementById('indexRows');
   if (!bar || !rows) return;
 
-  var categories = window.portfolioData.map(function (c) { return c.category; });
+  var categories = window.portfolioCategories.filter(function (cat) {
+    return window.allProjects.some(function (p) { return p.category === cat; });
+  });
   var filters = ['Alles'].concat(categories);
   var active = 'Alles';
 

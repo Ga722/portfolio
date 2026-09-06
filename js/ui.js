@@ -39,6 +39,9 @@
       });
     };
     window.addEventListener('scroll', mark, { passive: true });
+    // Run again once layout has settled: images decode late and home.js renders the portfolio
+    // rows after this file, so at script time every section still reports offsetTop 0.
+    window.addEventListener('load', mark);
     mark();
   }
 
@@ -56,22 +59,29 @@
   };
   var href = function (p) { return 'project.html?id=' + encodeURIComponent(p.id); };
 
+  /* Categorie en jaar, met het scheidingsteken alleen als beide gevuld zijn — een project
+     zonder jaar mag geen losse punt achter zich krijgen. */
+  var meta = function (p) { return esc([p.category, p.year].filter(Boolean).join(' · ')); };
+
   /* ---- Kaart voor de Uitgelicht-rij ---- */
   function cardHTML(p) {
     return '<a class="card" href="' + href(p) + '">' +
       '<span class="card__thumb"' + bg(p.image) + ' role="img" aria-label="' + esc(p.title) + '"></span>' +
-      '<span class="card__eyebrow"><span class="dash"></span>' + esc(p.category) + ' · ' + esc(p.year) + '</span>' +
+      '<span class="card__eyebrow"><span class="dash"></span>' + meta(p) + '</span>' +
       '<span class="card__title">' + esc(p.title) + '</span>' +
       '<span class="card__blurb">' + esc(p.blurb) + '</span>' +
       '</a>';
   }
 
-  /* ---- Rij in de index ---- */
+  /* ---- Rij in de index ----
+     De kleine thumbnail is er voor smalle schermen, waar het zwevende
+     previewpaneel naast de lijst niet past. */
   function rowHTML(p, n) {
     return '<a class="row" href="' + href(p) + '" data-i="' + n + '">' +
       '<span class="row__n">' + String(n + 1).padStart(2, '0') + '</span>' +
+      '<span class="row__thumb"' + bg(p.image) + ' role="img" aria-label="' + esc(p.title) + '"></span>' +
       '<span class="row__main"><span class="row__title">' + esc(p.title) + '</span>' +
-      '<span class="row__meta">' + esc(p.category) + ' · ' + esc(p.year) + '</span></span>' +
+      '<span class="row__meta">' + meta(p) + '</span></span>' +
       '<span class="row__cat">' + esc(p.category) + '</span>' +
       '<span class="row__year">' + esc(p.year) + '</span>' +
       '<span class="row__arrow">' + ARROW_R20 + '</span>' +
@@ -82,7 +92,7 @@
   function previewHTML(p) {
     return '<a href="' + href(p) + '">' +
       '<span class="preview__thumb"' + bg(p.image) + ' role="img" aria-label="' + esc(p.title) + '"></span>' +
-      '<span class="preview__meta"><span class="dash"></span>' + esc(p.category) + ' · ' + esc(p.year) + '</span>' +
+      '<span class="preview__meta"><span class="dash"></span>' + meta(p) + '</span>' +
       '<h3>' + esc(p.title) + '</h3><p>' + esc(p.blurb) + '</p></a>' +
       '<a class="arrow-link" href="' + href(p) + '">Bekijk project' + ARROW_R + '</a>';
   }
