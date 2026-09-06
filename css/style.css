@@ -35,7 +35,7 @@
    Reset + base
    ========================================================================== */
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:var(--anchor-offset,0px)}
 body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--font-ui);-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
 /* Zonder dit verliezen de .hidden-secties hun verberging: een display in de stylesheet
@@ -340,11 +340,28 @@ h1,h2,h3,p{overflow-wrap:break-word;text-wrap:pretty}
 /* De hero-verhouding is een terugval: project.js overschrijft hem met de echte
    verhouding van het beeld zodra een project een ratio meegeeft. */
 .project__hero .block{aspect-ratio:4/3}
+/* Doorbladerbare publicatie in plaats van een schermafbeelding. De padding-top houdt de
+   verhouding vast zonder vaste hoogte, zodat het op telefoon niet te laag wordt. */
+.embed{position:relative;padding-top:max(60%,324px);width:100%;height:0;border-radius:var(--radius-image);overflow:hidden;background:var(--surface-placeholder)}
+.embed--video{padding-top:56.25%}
+.embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.project__embed{display:grid;gap:20px;padding:0 var(--side-pad) clamp(24px,5vw,56px)}
+.project__embed h2{font-family:var(--font-display);font-weight:300;font-size:clamp(24px,6vw,36px);margin:0}
 .project__body{display:grid;gap:28px;padding:clamp(36px,8vw,100px) var(--side-pad)}
 .project__body h2{font-family:var(--font-display);font-weight:300;font-size:clamp(24px,6vw,36px);margin:0 0 16px}
 .project__body p{font-family:var(--font-display);font-size:clamp(16px,4vw,19px);line-height:1.7;margin:0}
 .project__actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:32px}
 .figure{margin:0}
+/* Staande beelden (posters, banners, telefoonschermen) blijven op posterformaat, ook als
+   ze alleen in hun raster staan. */
+/* Een staande hero blijft op posterformaat en wordt nooit boven zijn eigen
+   pixelbreedte opgeblazen: --hero-max komt uit de opgegeven verhouding. */
+.project__hero--portrait .block{max-width:min(100%,var(--hero-max,620px));margin:0 auto}
+.figure--portrait{max-width:400px}
+.figure--square{max-width:400px}
+/* Een beeld met een eigen verhouding bepaalt zelf zijn hoogte; de vaste 260px hieronder
+   geldt alleen voor beelden zonder opgegeven verhouding. */
+.process__grid .figure--portrait .block,.process__grid .figure--square .block,.process__grid .figure--ratio .block{min-height:0}
 .figure figcaption{margin-top:10px;font-family:var(--font-ui);font-size:13px;color:var(--text-muted);line-height:1.4}
 /* Volledige-paginacaptures: eigen rij, en een schuifkader zodat een pagina van 6000px de
    projectpagina niet onleesbaar lang maakt. In de galerij blijft de breedte begrensd omdat

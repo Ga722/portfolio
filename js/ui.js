@@ -2,6 +2,21 @@
 (function () {
   'use strict';
 
+  /* ---- Ankerpunten onder de plakkende header ----
+     De header blijft bovenaan staan, dus een sprong naar #overmij zette de titel er half
+     achter. De echte hoogte van de header wordt gemeten en als scroll-padding gezet, zodat
+     de browser bij elke ankersprong precies onder de header uitkomt. */
+  var header = document.querySelector('.header');
+  if (header) {
+    var setOffset = function () {
+      var h = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--anchor-offset', Math.round(h + 12) + 'px');
+    };
+    setOffset();
+    window.addEventListener('resize', setOffset);
+    window.addEventListener('load', setOffset);
+  }
+
   /* ---- Mobiel menu ---- */
   var btn = document.getElementById('menuBtn');
   var menu = document.getElementById('menu');
@@ -29,7 +44,7 @@
     .filter(Boolean);
   if (sections.length === 4) {
     var mark = function () {
-      var y = window.scrollY + 120;
+      var y = window.scrollY + (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--anchor-offset'), 10) || 120) + 40;
       var current = 'home';
       sections.forEach(function (s) { if (s.offsetTop <= y) current = s.id; });
       document.querySelectorAll('.nav__link, .menu__item').forEach(function (a) {

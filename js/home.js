@@ -2,8 +2,6 @@
 (function () {
   'use strict';
 
-  var narrow = window.matchMedia('(max-width: 720px)');
-
   /* ---- Uitgelicht ---- */
   var track = document.getElementById('railTrack');
   if (track) {
@@ -27,16 +25,29 @@
   /* ---- Index ---- */
   var rows = document.getElementById('indexRows');
   if (rows) {
-    var n = narrow.matches ? 6 : 8;
+    /* De index onder de uitgelichte rij toont wat daar niet al staat, maximaal zes rijen.
+       Wie meer wil ziet ze allemaal op projecten.html — vandaar geen "Laad meer". */
+    var railIds = (window.highlightProjects || []).map(function (p) { return p.id; });
+    var rest = window.allProjects.filter(function (p) { return railIds.indexOf(p.id) === -1; });
+    /* Zes vaste rijen, elk uit een ander vakgebied, in deze volgorde. Wijzig de rij hieronder
+       om de index te herschikken; een id dat niet bestaat wordt gewoon overgeslagen. */
+    var indexOrder = [
+      'groeihelden-boterhammendoos',
+      'trouwboekjes-website',
+      'isic-belgie-poster',
+      'agion-jaarverslag-2020',
+      'bric-app',
+      'mediaraven-infographic'
+    ];
+    var byId = {};
+    rest.forEach(function (p) { byId[p.id] = p; });
+    var items = indexOrder.map(function (id) { return byId[id]; }).filter(Boolean).slice(0, 6);
     window.gaUI.renderIndex({
       rows: rows,
       preview: document.getElementById('preview'),
-      items: window.allProjects,
-      initial: n,
-      step: n,
-      loadMore: document.getElementById('loadMore'),
-      loadMoreCount: document.getElementById('loadMoreCount'),
-      foot: document.getElementById('indexFoot')
+      items: items,
+      initial: 6,
+      step: 6
     });
   }
 
