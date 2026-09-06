@@ -35,6 +35,7 @@
 <main>
 
 <section class="hero" id="home">
+<div class="hero__block">
 <p class="hero__role">Grafisch ontwerper, video editor en webmaster</p>
 <div class="hero__stats">
 <div class="stat"><span class="stat__value"><span class="stat__plus">+</span>100</span><span class="stat__label">Projecten</span></div>
@@ -42,10 +43,11 @@
 </div>
 <div class="hero__main">
 <div class="hero__word">
-<img class="hero__brush" src="assets/hero-graphic.png" alt="" aria-hidden="true">
 <h1 class="hero__title">Hello</h1>
+<img class="hero__brush" src="assets/hero-graphic.png" width="900" height="900" alt="" aria-hidden="true">
 </div>
 <p class="hero__sub"><span class="dash"></span>Ik ben Gazmend Aliaj een multimedia specialist</p>
+</div>
 </div>
 <a class="scroll-down" href="#overmij">Scroll down<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1v16M9 17l6-6M9 17l-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </section>
@@ -54,12 +56,12 @@
 <h2 class="section-title">Over mij</h2>
 <span class="title-rule"></span>
 <div class="about__grid">
-<img class="about__photo about__photo--mobile" src="assets/palet-foto.png" alt="Werkpalet van Gazmend Aliaj" loading="lazy">
+<img class="about__photo about__photo--mobile" src="assets/palet-foto.png" width="598" height="509" alt="Werkpalet van Gazmend Aliaj" loading="lazy">
 <div class="about__body">
 <p>Ik ben een gedreven grafisch ontwerper, video editor en webmaster met meer dan 8 jaar ervaring in het vak. In mijn werk combineer ik creativiteit en technische vaardigheden om visueel sterke ontwerpen en digitale oplossingen te ontwikkelen. Of het nu gaat om grafische ontwerpen, professionele video-editing of het bouwen en onderhouden van websites, ik streef altijd naar perfectie en een resultaat dat zowel esthetisch als functioneel is. Mijn doel is om visuele content te creëren die niet alleen mooi is, maar ook impact maakt en aansluit bij de behoeften van de klant.</p>
 <a class="btn" href="#contact">Contacteer me<svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M1 7h18M13 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
-<img class="about__photo about__photo--desktop" src="assets/palet-foto.png" alt="Werkpalet van Gazmend Aliaj" loading="lazy">
+<img class="about__photo about__photo--desktop" src="assets/palet-foto.png" width="598" height="509" alt="Werkpalet van Gazmend Aliaj" loading="lazy">
 </div>
 </section>
 
@@ -95,10 +97,10 @@
 <span class="title-rule"></span>
 <form class="form" id="contactForm" novalidate>
 <div class="form__row">
-<div class="field"><label for="voornaam">Voornaam*</label><input type="text" id="voornaam" name="voornaam" placeholder="Jouw naam*" required></div>
-<div class="field"><label for="familienaam">Familienaam*</label><input type="text" id="familienaam" name="familienaam" placeholder="Jouw familienaam*" required></div>
+<div class="field"><label class="visually-hidden" for="voornaam">Voornaam</label><input type="text" id="voornaam" name="voornaam" placeholder="Voornaam*" required></div>
+<div class="field"><label class="visually-hidden" for="familienaam">Familienaam</label><input type="text" id="familienaam" name="familienaam" placeholder="Familienaam*" required></div>
 </div>
-<div class="field"><label for="bericht">Bericht*</label><textarea id="bericht" name="bericht" rows="5" placeholder="Vul in uw bericht*" required></textarea></div>
+<div class="field"><label class="visually-hidden" for="bericht">Bericht</label><textarea id="bericht" name="bericht" rows="5" placeholder="Bericht*" required></textarea></div>
 <button class="btn" type="submit">Contacteer me<svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M1 7h18M13 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <p class="form__status" role="status" id="formStatus"></p>
 </form>
