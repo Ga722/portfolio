@@ -1,4 +1,4 @@
-# Portfolio — Gazmend Aliaj
+# Portfolio 
 
 Statische site: HTML, CSS en JavaScript. Geen build-stap, geen dependencies.
 
@@ -15,10 +15,6 @@ js/project.js         Projectpagina
 assets/               Logo, foto's, iconen, projectbeelden
 ```
 
-## Op GitHub Pages zetten
-
-Upload de inhoud van deze map naar de root van je repository (`index.html` bovenaan, niet in
-een submap). Dan **Settings → Pages → Source: Deploy from a branch**, branch `main`, map `/ (root)`.
 
 ## Een project toevoegen
 
@@ -46,19 +42,3 @@ In `js/portfolio-data.js`:
   example: true                  // verzonnen voorbeeld, mag weg
 }
 ```
-
-Lege velden verdwijnen van de pagina. Beelden komen in `assets/werk/<project>/`.
-Categorieën staan onderaan het bestand in `window.portfolioCategories`; een categorie zonder
-projecten verschijnt niet.
-
-## Nog te doen
-
-- E-mailadres: `gazmend.aliaj@companyname.com` staat als voorbeeld in de drie HTML-bestanden.
-- LinkedIn en Instagram in de footer staan op `#`.
-- Contactformulier verstuurt niets. Koppel het aan Formspree (`action` + `method` op het
-  `<form>`, en de `e.preventDefault()` uit `js/home.js`) of Netlify Forms.
-- Jaar ontbreekt bij Drankenacademy en FTRPRF.
-- Guido Magazine: rol en beschrijving nog aan te vullen, en er is nog geen coverbeeld
-  (`image: ''`), dus in de lijst staat daar een grijs vlak.
-- Onderaan `portfolio-data.js` staan nog zes verzonnen voorbeelden onder Video en Animatie,
-  elk met `example: true`. Die mogen weg zodra je eigen video- en animatiewerk erin staat.

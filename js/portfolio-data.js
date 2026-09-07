@@ -37,6 +37,70 @@ window.portfolioData = [
     category: 'App-ontwerp',
     items: [
       {
+        id: 'keepmoving-app',
+        highlight: 1,
+        title: 'KeepMoving app — herontwerp',
+        blurb: 'Volledig nieuw ontwerp en nieuwe features voor de challenge-app.',
+        description: 'De KeepMoving-app bestond al: deelnemers doen in teams mee aan challenges en volgen hun voortgang. Mijn opdracht was een volledig nieuw ontwerp plus een reeks nieuwe features. Ik maakte het complete design en volgde de ontwikkeling op met het team — naast ontwerper was ik ook product owner en leidde ik het team dat de app bouwde. Het ontwerp moest twee dingen tegelijk kunnen: cijfers tonen aan wie prestaties wil zien, en licht blijven voor wie gewoon meedoet.',
+        role: 'App-ontwerp, product owner',
+        client: 'Golazo Energy',
+        year: '',
+        image: 'assets/werk/keepmoving/overzicht.jpg',
+        ratio: '2000 / 1333',
+        embed: '',
+        gallery: [],
+        link: 'https://www.figma.com/proto/F7oYvmbVfnupjIa8qlMcNY/KeepMoving-App-Design?node-id=20605-60688&viewport=6809%2C1420%2C0.35&t=BxsrjFPCpjwb2LOf-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20605%3A60688&show-proto-sidebar=1&page-id=203%3A2',
+        linkLabel: 'Bekijk het prototype',
+        video: '',
+        processTitle: 'Ontwerp',
+        process: [
+          {
+            title: 'Donkergroen als grond, één fluogroen als signaal',
+            blurb: 'Het hele ontwerp staat op een diep blauwgroen met daarop precies één verzadigde kleur: het fluogroen van Golazo Energy. Die verhouding is de dragende regel — groen betekent altijd "hier gebeurt iets": een actieve tab, een gehaald doel, een knop, je eigen positie in de ranglijst. Omdat het donkere vlak alle andere kleur wegneemt, hoeft er geen tweede accent bij en blijft een scherm met dertig getallen leesbaar. Sport-apps kiezen doorgaans wit of zwart; het donkergroen geeft het merk een eigen plek.',
+            images: [{ src: 'assets/werk/keepmoving/login.jpg', ratio: '393 / 844' }]
+          },
+          {
+            title: 'Vetgesneden schreefloze koppen tegen een humanistische tekstletter',
+            blurb: 'STATS, LEADERBOARD, GALLERY staan in een smalle, vet gecondenseerde hoofdletterletter — een spandoekletter die het wedstrijdkarakter draagt en in één regel over de schermbreedte past. Alles wat gelezen moet worden staat in een gewone humanistische schreefloze met open vormen. Die twee registers naast elkaar zorgen dat een scherm meteen "sport" leest terwijl de cijfers en labels neutraal blijven; één letter voor beide zou of te schreeuwerig of te braaf uitvallen.'
+          },
+          {
+            title: 'Een vaste balk met rang, voortgang en resterende dagen',
+            blurb: 'Onder de hoofding staat op elk challenge-scherm dezelfde smalle strook: rang, percentage afgelegd, dagen te gaan, en een knop naar de details. Drie cijfers in de plaats van een dashboard. Het is de vraag die een deelnemer bij elke opening stelt, dus die hoort niet één scherm diep te zitten. Het chevron rechts vouwt de strook open voor wie meer wil; dicht blijft ze twee regels hoog.',
+            images: [{ src: 'assets/werk/keepmoving/leaderboard.jpg', ratio: '393 / 1081' }]
+          },
+          {
+            title: 'Statistiek in kaarten van afnemend belang',
+            blurb: 'Het statistiekscherm is lang, dus het is geordend van meest naar minst dringend: eerst het stappentotaal met balk en percentage, dan de daggrafiek van de week, dan algemene rangen, dan de weekdoelen, dan de prijs. Elk blok is een kaart met een eigen kop in hoofdletters, waardoor je bij het scrollen op kopniveau kunt navigeren zonder een index. In de grafiek gebruik ik één lijn met een groene verloopvulling en slechts vier datumlabels — genoeg om de vorm te lezen, te weinig om een tabel te worden.',
+            images: [{ src: 'assets/werk/keepmoving/stats.jpg', ratio: '393 / 2535' }],
+            tall: true
+          },
+          {
+            title: 'Ranglijst waarin je eigen plaats altijd zichtbaar is',
+            blurb: 'De top zes staat volledig uitgeschreven, met de eerste drie rangnummers in een groen vak en de rest in wit — een podium zonder medailles te tekenen. Daarna drie puntjes en dan je eigen team, in een groen omlijnde rij. Wie op plaats 25 staat moet niet scrollen om zichzelf te vinden; dat is het verschil tussen een ranglijst die motiveert en één die afstraft. Teams tonen een avatar en het aantal leden, zodat een rij een groep mensen blijft en niet enkel een getal.'
+          },
+          {
+            title: 'Twee soorten invoer op één scherm',
+            blurb: 'Activiteiten en dagelijkse stappen zijn twee registers die niet door elkaar mogen lopen, dus staan ze onder twee pilltabs met daarnaast één plusknop voor manuele invoer. Elke rij heeft links een groene ronde discipline-icoon, in het midden datum en tijd, rechts het aantal stappen. De kleine icoontjes achter de naam laten zien via welke tracker de activiteit binnenkwam — nodig, want bij een challenge wordt over de herkomst van stappen gediscussieerd.',
+            images: [{ src: 'assets/werk/keepmoving/activities.jpg', ratio: '393 / 1243' }]
+          },
+          {
+            title: 'Trackers koppelen als eerste stap, niet als instelling',
+            blurb: 'De koppeling met Strava, Garmin, Fitbit en de rest is een volledig scherm bij de start in plaats van een regel in de instellingen, want een challenge zonder gekoppelde tracker levert geen data. Elke dienst staat op een volle groene pill met het eigen app-icoon links — de merklogo\'s zijn de enige plek waar andere kleuren binnenkomen, wat toegestaan is omdat ze herkenning doen. "Skip (add later)" staat er even groot bij, met de belofte eronder dat het later in de instellingen kan.',
+            images: [{ src: 'assets/werk/keepmoving/trackers.jpg', ratio: '393 / 1186' }]
+          },
+          {
+            title: 'Galerij en blog als tegenwicht voor de cijfers',
+            blurb: 'Naast de statistiek staan twee schermen die niets meten: een fotogalerij van de deelnemers en een blog met artikels over volhouden. In de galerij ligt de naam en het team over de onderrand van elke foto met een hartje rechts, zodat het raster vol beeld blijft. De blog opent met een volle-breedte foto en een intro in het lichtere groen, daarna smalle leesbare kolommen. Die twee schermen maken van een prestatie-app iets waar ook een trage deelnemer thuishoort.',
+            images: [{ src: 'assets/werk/keepmoving/gallery.jpg', ratio: '393 / 1286' }]
+          },
+          {
+            title: 'Instellingen in één kaart, met de zware actie los',
+            blurb: 'Het profiel staat als één kaart met onderlijnde velden in plaats van omkaderde invoervakken; met alleen een lijn per veld passen zeven gegevens op een scherm zonder dat het een formulier van een verzekeraar wordt. Boven de kaart de foto met een groene uploadknop erop. "Delete account" staat buiten de kaart onderaan, in dezelfde groene pill als elke andere knop maar afgezonderd — geen rode waarschuwingsknop, wel afstand.',
+            images: [{ src: 'assets/werk/keepmoving/profiel.jpg', ratio: '393 / 1107' }]
+          }
+        ]
+      },
+      {
         id: 'bric-app',
         highlight: 0,
         title: 'BRIC — interactieve quiz-app',
@@ -89,7 +153,7 @@ window.portfolioData = [
     items: [
       {
         id: 'guido-magazine',
-        highlight: 1,
+        highlight: 2,
         title: 'Guido Magazine',
         blurb: 'Vormgeving en opmaak van het studentenmagazine.',
         description: 'Guido is het grootste Belgische mediamerk voor studenten, scholieren en starters: een gratis magazine dat in een oplage van rond de 100.000 exemplaren de studentensteden in gaat. Redactioneel breed — interviews, studiekeuze, jobs, festivals, reizen — en dus grafisch een kwestie van één taal vinden die al die registers aankan. Ik verzorgde de vormgeving en opmaak van deze editie.',
@@ -125,7 +189,7 @@ window.portfolioData = [
       },
       {
         id: 'zefier-jaarverslag-2025',
-        highlight: 5,
+        highlight: 0,
         title: 'Jaarverslag Zefier 2025',
         blurb: 'Online jaarverslag voor de Vlaamse coöperatie voor hernieuwbare energie.',
         description: 'Een jaarverslag over wind, zon en warmte mag daar ook naar aanvoelen. Ik gaf het verslag daarom landschap als hoofdrol: brede luchtfoto\'s van windparken, een teruggebracht palet van olijfgroen, goud en wit, en cijfers die in die ruimte mogen staan in plaats van in een tabel te verdwijnen. Vijf hoofdstukken, elk met een eigen fotoband als openingsbeeld, zodat de lezer aan het beeld al voelt waar hij is. Ik verzorgde ontwerp, opmaak, interactieve opbouw, animatie en beeldbewerking.',
@@ -227,7 +291,7 @@ window.portfolioData = [
       },
       {
         id: 'drankenacademy',
-        highlight: 4,
+        highlight: 5,
         title: 'Drankenacademy',
         blurb: 'E-learnings en cursusboeken voor de wijn- en drankensector.',
         description: 'Vier vakgebieden onder één naam, die elk hun eigen publiek en eigen sfeer hebben. In plaats van één huisstijl over alles te leggen gaf ik elk vakgebied een eigen wereld — eigen kleur, eigen merkteken, eigen illustratiestijl — en hield ik de opbouw identiek. Zo blijft het één familie: je ziet meteen dat wijn en bier bij elkaar horen, en even snel dat je in een ander vak zit. Elke wereld loopt door van het cursusboek naar de e-learning en het examenformulier. Ik verzorgde ontwerp, opmaak, interactieve opbouw, animatie en beeldbewerking.',
@@ -295,9 +359,10 @@ window.portfolioData = [
         year: '',
         image: 'assets/werk/moordenaar-intro/titelkaart-boek.png',
         ratio: '1435 / 821',
-        embed: '',
+        embed: 'https://www.youtube.com/embed/SudBOqi3yc4',
+        embedTitle: 'Bekijk de intro',
         gallery: [],
-        link: '',
+        link: 'https://youtu.be/SudBOqi3yc4',
         video: '',
         processTitle: 'Aanpak',
         process: [
@@ -485,7 +550,7 @@ window.portfolioData = [
       },
       {
         id: 'big-against-breast-cancer',
-        highlight: 3,
+        highlight: 4,
         title: 'BIG against breast cancer',
         blurb: 'Animatie over twintig jaar vooruitgang in borstkankeronderzoek.',
         description: 'BIG against breast cancer bestond twintig jaar. De boodschap is dubbel: twintig jaar geleden was er voor vrouwen met borstkanker weinig te bieden, vandaag is dat wezenlijk anders, en juist daarom blijft er geld nodig. Een film die alleen het verleden toont wordt zwaar, een film die alleen de vooruitgang toont maakt de vraag om steun overbodig. Ik bouwde de animatie daarom rond één beeld dat beide kanten kan dragen: een boom die zich in de loop van de film vult.',
@@ -857,6 +922,50 @@ window.portfolioData = [
     category: 'Print',
     items: [
       {
+        id: 'foodcoach-pj-flyer',
+        highlight: 0,
+        title: 'Food Coach PJ — flyer',
+        blurb: 'Flyer voor voedingsadvies en sportvoeding, uitgedeeld langs een looproute.',
+        description: 'Food Coach PJ begeleidt mensen rond afslanking en sportvoeding. Deze flyer wordt uitgedeeld aan lopers van Dwars door Kruisem, dus hij komt in handen van iemand die net gefinisht is en niet gaat lezen. Ik maakte een volledig nieuw ontwerp waarin de aanspreking het beeld is en de rest van de pagina daaronder in één blik te overzien valt.',
+        role: 'Ontwerp, opmaak',
+        client: 'Food Coach PJ',
+        year: '',
+        image: 'assets/werk/foodcoach-pj/mockup.jpg',
+        ratio: '1900 / 1023',
+        embed: '',
+        gallery: [],
+        link: '',
+        video: '',
+        processTitle: 'Ontwerp',
+        process: [
+          {
+            title: 'De kop spreekt de loper in zijn eigen taal aan',
+            blurb: 'De aanspreking staat in vier trappen over de halve pagina: "Net Dwars door Kruisem gelopen?" in oranje, "Goe bezig!" in blauw. Door de wisseling van kleur en corpsgrootte per regel leest de kop als een gesproken zin met een klemtoon op het einde. Dialect in een advertentie is een risico, maar hier is het publiek precies één wedstrijd groot, en de flyer wordt aan de aankomst uitgedeeld — de flyer weet dus wie hij aanspreekt en mag dat laten horen.',
+            images: [{ src: 'assets/werk/foodcoach-pj/flyer.jpg', ratio: '1167 / 1653' }]
+          },
+          {
+            title: 'Vrijstaande loper over de volle hoogte',
+            blurb: 'De foto is uitgesneden en loopt over de rechterhelft van boven tot in de contactbalk, met het hoofd tegen de bovenrand en de voeten over de oranje voet heen. Een vrijstaande figuur op de kleurvlakken bindt de twee helften aan elkaar: zonder kader hoort hij bij de hele pagina in plaats van bij een fotovak. Daardoor blijft er links één rechthoekig gebied over voor alle tekst, wat de opmaak rustig houdt.'
+          },
+          {
+            title: 'Oranje en blauw, elk met een eigen taak',
+            blurb: 'Uit het logo komen twee verzadigde kleuren die elkaar in helderheid weinig toegeven, dus ik gaf ze verschillende rollen in plaats van ze te mengen: oranje is roep en actie (de eerste regels, de contactbalk, de gratis-cirkel), blauw is inhoud (het aanbod, het antwoord "Goe bezig!"). Het gebroken wit van de grond is warm gehouden zodat beide kleuren erop staan zonder te trillen.'
+          },
+          {
+            title: 'Het aanbod in een blauw blok van vier regels',
+            blurb: 'Wat de coach doet, staat in één blauw vlak met vier regels en een pictogram per regel: voedingsadvies, sportvoeding op maat, begeleiding, blijvend resultaat. Vier is de bovengrens voor wat iemand rechtopstaand leest. Het blok heeft zijn eigen kop "WHAT\'S NEXT?" en ronde hoeken, waardoor het als kaartje in de pagina zit en de blik er na de kop meteen naartoe springt.'
+          },
+          {
+            title: 'Diagonalen als beweging, dots als rust',
+            blurb: 'Achter de loper staan brede diagonale banen in twee blauwtinten en oranje: dezelfde helling als een sprintende figuur, zodat de achtergrond de beweging van de foto meedoet in plaats van eronder te liggen. Als tegengewicht staan er kleine puntrasters in de hoeken, die de lege plekken vullen zonder gewicht toe te voegen. Beide zijn afgeleid van het rond logo, waardoor de flyer bij het merk blijft.'
+          },
+          {
+            title: 'Eén aanbod, één QR, op de plek waar de blik uitkomt',
+            blurb: 'Het gratis intakegesprek zit in een oranje cirkel onderaan rechts met de QR-code erin — het einde van de leesbeweging van linksboven naar rechtsonder, en de enige ronde vorm op de pagina, dus hij valt op zonder groter te moeten. "Op vertoon van deze flyer" staat erbij: dat maakt het papier zelf de toegang, wat een flyer een reden geeft om bewaard te worden. De contactgegevens staan in een oranje voetbalk over de volle breedte, met telefoon, e-mail en site elk achter een eigen pictogram.'
+          }
+        ]
+      },
+      {
         id: 'isic-belgie-poster',
         highlight: 0,
         title: 'ISIC België',
@@ -979,7 +1088,7 @@ window.portfolioData = [
       },
       {
         id: 'codefever-drukwerk-2022',
-        highlight: 2,
+        highlight: 3,
         title: 'CodeFever drukwerk',
         blurb: 'Flyers en folders voor de lessenreeksen, kampen en bijscholingen.',
         description: 'CodeFever spreekt twee publieken tegelijk aan: het kind dat het leuk moet vinden en de ouder die moet beslissen. Daarom draagt elk stuk twee registers naast elkaar. Voor het kind: de eigen game-personages — een robot, een ninja, een zombie — die als stickers over de rand van het blad kruipen, en fotografie van kinderen achter een scherm in plaats van geposeerde stockbeelden. Voor de ouder: een strakke kolomopbouw met gele en groene markeerbalken op de kopregels, zodat wie snel scant meteen prijs, plaats en datum vindt. Elk product heeft een eigen basiskleur binnen dezelfde spikkelbol-huisstijl, zodat de reeks als familie leest en toch onderscheidbaar blijft.',

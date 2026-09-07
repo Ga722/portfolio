@@ -37,7 +37,7 @@
       'isic-belgie-poster',
       'agion-jaarverslag-2020',
       'bric-app',
-      'mediaraven-infographic'
+      'foodcoach-pj-flyer'
     ];
     var byId = {};
     rest.forEach(function (p) { byId[p.id] = p; });

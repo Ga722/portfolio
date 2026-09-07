@@ -26,6 +26,7 @@
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       btn.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
       document.body.style.overflow = open ? 'hidden' : '';
+      document.body.dataset.menuOpen = open ? 'true' : 'false';
     };
     btn.addEventListener('click', function () {
       setOpen(menu.getAttribute('data-open') !== 'true');
